@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="SklepModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="SklepEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Uzytkownicy" EntityType="SklepModel.Uzytkownicy" />
+    <EntitySet Name="Produkty" EntityType="SklepModel.Produkty" />
+    <EntitySet Name="RolaUzytkownika" EntityType="SklepModel.RolaUzytkownika" />
+  </EntityContainer>
+  <EntityType Name="Uzytkownicy">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="LOGIN" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PASSWORD" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="IMIE" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="NAZWISKO" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="IdRola" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Produkty">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Produkt" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="IloscSztuk" Type="Int32" />
+    <Property Name="Opis" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="RolaUzytkownika">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Rola" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+</Schema>
